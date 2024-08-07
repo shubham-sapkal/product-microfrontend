@@ -3,13 +3,16 @@ import ReactDOM from "react-dom/client";
 
 import Header from "./components/Header";
 import Footer from "./components/Footer";
+import HomeContent from "./components/HomeContent";
 
 import "./index.scss";
 
 const App = () => (
   <div className="text-3xl mx-auto max-w-6xl">
     <Header />
-    <div className="py-10">Home Page</div>
+    <div className="py-10">
+      <HomeContent />
+    </div>
     <Footer />
   </div>
 );
