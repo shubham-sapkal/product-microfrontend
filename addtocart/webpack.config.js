@@ -9,7 +9,7 @@ const printCompilationMessage = require('./compilation.config.js');
 
 module.exports = (_, argv) => ({
   output: {
-    publicPath: "http://localhost:3001/",
+    publicPath: "http://localhost:3003/",
   },
 
   resolve: {
@@ -17,11 +17,8 @@ module.exports = (_, argv) => ({
   },
 
   devServer: {
-    port: 3001,
+    port: 3003,
     historyApiFallback: true,
-    // headers: {
-    //   "Access-Control-Allow-Origin": "*",
-    // },
     watchFiles: [path.resolve(__dirname, 'src')],
     onListening: function (devServer) {
       const port = devServer.server.address().port
@@ -65,24 +62,20 @@ module.exports = (_, argv) => ({
 
   plugins: [
     new ModuleFederationPlugin({
-      name: "pdp",
+      name: "addtocart",
       filename: "remoteEntry.js",
       remotes: {
-        home: "home@http://localhost:3000/remoteEntry.js",
-        pdp: "pdp@http://localhost:3001/remoteEntry.js",
         cart: "cart@http://localhost:3002/remoteEntry.js",
-        addtocart: "addtocart@http://localhost:3003/remoteEntry.js"
       },
-      exposes: {},
+      exposes: {
+        './AddToCart': './src/AddToCart.jsx',
+        './placeAddToCart': './src/placeAddToCart.js'
+      },
       shared: {
         ...deps,
-        react: {
+        "solid-js": {
           singleton: true,
-          requiredVersion: deps.react,
-        },
-        "react-dom": {
-          singleton: true,
-          requiredVersion: deps["react-dom"],
+          requiredVersion: deps["solid-js"],
         },
       },
     }),
