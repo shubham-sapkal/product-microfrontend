@@ -2,6 +2,8 @@
 import { useState } from "react";
 import { login, useLoggedIn } from "./Cart";
 
+import 'tailwindcss/tailwind.css'
+
 const Login = () => {
 
     const loggedIn = useLoggedIn();
@@ -23,7 +25,7 @@ const Login = () => {
                 style={{
                     width: 300,
                     top: "2rem",
-                    // left: -250,
+                    left: -250,
                 }}
                 >
                 <input

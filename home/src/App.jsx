@@ -8,6 +8,8 @@ import HomeContent from "./components/HomeContent";
 import "remixicon/fonts/remixicon.css";
 import "./index.scss";
 
+import 'tailwindcss/tailwind.css'
+
 const App = () => (
   <div className="text-3xl mx-auto max-w-6xl">
     <Header />
