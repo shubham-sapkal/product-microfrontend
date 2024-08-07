@@ -1,20 +1,22 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 
-import Header from "./components/Header";
-import Footer from "./components/Footer";
-import HomeContent from "./components/HomeContent";
+import Header from "home/Header";
+import Footer from "home/Footer";
+import CartContent from "./CartContent";
 
 import "remixicon/fonts/remixicon.css";
+
 import "./index.scss";
 
 const App = () => (
-  <div className="text-3xl mx-auto max-w-6xl">
+  <div className="mt-10 text-3xl mx-auto max-w-6xl">
     <Header />
-    <div className="py-10">
-      <HomeContent />
+    <div className="my-10">
+      <CartContent />
     </div>
     <Footer />
+
   </div>
 );
 const rootElement = document.getElementById("app")
