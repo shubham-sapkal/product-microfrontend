@@ -6,5 +6,3 @@ import AddToCart from "./AddToCart";
 export default function placeAddToCart(ele, id) {
     render(() => <AddToCart id={id} />, ele);
 }
-
-

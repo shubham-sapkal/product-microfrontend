@@ -72,7 +72,8 @@ module.exports = (_, argv) => ({
       exposes: {
         "./cart": "./src/Cart.js",
         "./Login": "./src/Login.jsx",
-        "./MiniCart": "./src/MiniCart.jsx"
+        "./MiniCart": "./src/MiniCart.jsx",
+        "./CartContent": "./src/CartContent.jsx",
       },
       shared: {
         ...deps,
@@ -84,6 +85,10 @@ module.exports = (_, argv) => ({
           singleton: true,
           requiredVersion: deps["react-dom"],
         },
+        "react-router-dom": {
+          singleton: true,
+          requiredVersion: deps["react-router-dom"],
+        }
       },
     }),
     new HtmlWebPackPlugin({

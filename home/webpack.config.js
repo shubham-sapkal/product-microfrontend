@@ -72,7 +72,8 @@ module.exports = (_, argv) => ({
       exposes: {
         "./Header": "./src/components/Header.jsx",
         "./Footer": "./src/components/Footer.jsx",
-        "./products": "./src/products.js"
+        "./products": "./src/products.js",
+        "./HomeContent": "./src/components/HomeContent.jsx"
       },  
       shared: {
         ...deps,
@@ -84,6 +85,10 @@ module.exports = (_, argv) => ({
           singleton: true,
           requiredVersion: deps["react-dom"],
         },
+        "react-router-dom": {
+          singleton: true,
+          requiredVersion: deps["react-router-dom"],
+        }
       },
     }),
     new HtmlWebPackPlugin({

@@ -12,9 +12,10 @@ const MiniCart = () => {
 
     useEffect( () => {
         setItems(cart.value?.cartItems);
-        return cart.subscribe( (c) => {
-            setItems(c?.cartItems)
-        } )
+        cart.subscribe( (c) => {
+                setItems(c?.cartItems)
+            } )
+    
     }, [])
 
     if(!items) return null;

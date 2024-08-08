@@ -19,9 +19,6 @@ module.exports = (_, argv) => ({
   devServer: {
     port: 3001,
     historyApiFallback: true,
-    // headers: {
-    //   "Access-Control-Allow-Origin": "*",
-    // },
     watchFiles: [path.resolve(__dirname, 'src')],
     onListening: function (devServer) {
       const port = devServer.server.address().port
@@ -73,7 +70,9 @@ module.exports = (_, argv) => ({
         cart: "cart@http://localhost:3002/remoteEntry.js",
         addtocart: "addtocart@http://localhost:3003/remoteEntry.js"
       },
-      exposes: {},
+      exposes: {
+        "./PDPContent": "./src/components/PDPContent.jsx"
+      },
       shared: {
         ...deps,
         react: {
@@ -84,6 +83,10 @@ module.exports = (_, argv) => ({
           singleton: true,
           requiredVersion: deps["react-dom"],
         },
+        "react-router-dom": {
+          singleton: true,
+          requiredVersion: deps["react-router-dom"],
+        }
       },
     }),
     new HtmlWebPackPlugin({

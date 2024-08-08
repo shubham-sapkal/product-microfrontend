@@ -8,7 +8,7 @@ const CartContent = () => {
 
 
     useEffect( () => {
-        return cart.subscribe( (value) => setItems( value?.cartItems ?? [])); 
+         cart.subscribe( (value) => setItems( value?.cartItems ?? []));
     }, [] )
 
     return (

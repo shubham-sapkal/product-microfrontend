@@ -22,7 +22,7 @@ export const getCart = () =>
     .then( (res) => {
         cart.next(res);
         return res;
-    } )
+    })
 
 export const login = (username, password) => 
     fetch(`${API_SERVER}/auth/login`, {
@@ -50,9 +50,9 @@ export const useLoggedIn = () => {
     useEffect( () => {
         setLoggedIn(!!jwt.value);
 
-        return jwt.subscribe( c => {
+        jwt.subscribe( c => {
             setLoggedIn(!!jwt.value);
-        } )
+        })
     }, []);
 
     return loggedIn;

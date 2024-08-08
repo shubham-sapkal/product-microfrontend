@@ -25,7 +25,6 @@ const App = () => {
             <Footer />
         </div>
     </Router>
-
   )
 };
 const rootElement = document.getElementById("app")
