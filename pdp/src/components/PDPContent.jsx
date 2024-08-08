@@ -5,6 +5,9 @@ import { useParams } from "react-router-dom";
 
 import placeAddToCart from "addtocart/placeAddToCart";
 
+
+import 'tailwindcss/tailwind.css'
+
 export default function PDPContent() {
 
     const { id } = useParams();
